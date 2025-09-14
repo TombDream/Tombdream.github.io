@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仓库管理系统</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 15px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-link:nth-child(1) {
+            background-color: #3498db;
+        }
+        
+        .nav-link:nth-child(2) {
+            background-color: #2ecc71;
+        }
+        
+        .nav-link:nth-child(3) {
+            background-color: #e74c3c;
+        }
+        
+        .nav-link:nth-child(1):hover {
+            background-color: #2980b9;
+        }
+        
+        .nav-link:nth-child(2):hover {
+            background-color: #27ae60;
+        }
+        
+        .nav-link:nth-child(3):hover {
+            background-color: #c0392b;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                width: 95%;
+            }
+            
+            h1 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .nav-link {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>仓库管理系统</h1>
+        <div class="nav-links">
+            <a href="./操作01.html" class="nav-link">操作</a>
+            <a href="./收货.html" class="nav-link">收货</a>
+            <a href="./订单.html" class="nav-link">订单</a>
+            <a href="./订单1.html"class="nav-link">订单1</a>
+        </div>
+    </div>
+</body>
+</html>

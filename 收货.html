@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仓库入库通知书</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+        .header h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2980b9;
+            font-size: 18px;
+            margin: 25px 0 15px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+        h3 {
+            color: #16a085;
+            font-size: 16px;
+            margin: 20px 0 10px;
+        }
+        p, li {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        ul {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+            margin: 15px 0;
+        }
+        .contact-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .footer {
+            text-align: right;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .signature {
+            margin-top: 50px;
+            text-align: right;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>仓库入库通知书</h1>
+        <p class="subtitle">规范入库流程 · 保障高效运营</p>
+    </div>
+
+    <div class="content">
+        <p>尊敬的供应商：</p>
+        <p>您好！为保障业务货物入库的高效与规范，确保订单及时履约，现将我司仓库入库相关要求详细告知如下：</p>
+
+        <h2>一、收货时间规定</h2>
+        <ul>
+            <li><strong>常规收货时间</strong>：每日12:00 - 22:00（此时间段匹配电商订单高峰后的货物补给节奏，便于仓库高效处理入库与后续订单分发）。</li>
+            <li><strong>特殊收货安排</strong>：若因大促（如"618""双11"等电商大促活动）、爆单等紧急情况需调整收货时间，请至少提前24小时与我司沟通，以便我司协调人力与库位资源。</li>
+        </ul>
+
+        <h2>二、收货地点信息</h2>
+        <p>广东省广州市花都区空港智慧物流产业园进门右转100米左转往斜坡方向上二楼（橙熟云仓）</p>
+
+        <h2>三、来货及收货要求</h2>
+        
+        <h3>1. 车辆与人员信息</h3>
+        <p>送货车辆需提前与仓库沟通，并提供驾驶员姓名、电话号码及车牌号进行报备，便于我司提前做好车辆进场与卸货准备。</p>
+        
+        <h3>2. 来货清单与单据</h3>
+        <ul>
+            <li>请务必核实来货清单，若缺少来货单，需在我司指定工作群内反馈，根据群内指示，当场补印A4规格来货单或作拒收处理（望重视）。</li>
+            <li>来货单据需提供两张来货清单，一张用于仓库入库登记，一张转交甲方做单据保存。</li>
+        </ul>
+        
+        <h3>3. 货物数量与信息核对</h3>
+        <p>若来货单与实际货物数量存在误差，请第一时间在工作群内反馈，待我司给出解决方案（如供应商确认、重新清点、补货等）后再进行收货签字，确保单据与入库数量一致。</p>
+        
+        <h3>4. 货物包装与码板</h3>
+        <ul>
+            <li>货物包装应完好无损，无明显破损、变形等情况，若有异常我方将拒收或告知甲方处理，避免后续产生对账影响</li>
+            <li>来货码板高度不超1.7米，若卡板高度超过1.7米左右，烦请司机自行调整好高度后再进行收货卸货；卡板长度需超过1.2米，且需使用可上高位库位的卡板，以适配仓库高位货架存储需求。</li>
+            <li>不同批次、效期的货物（如新旧款、同品不同效期、不同规格的商品）应分开码放，便于后续先进先出和库存管理。</li>
+        </ul>
+        
+        <h3>5. 特殊货物要求</h3>
+        <p>对于易碎（如玻璃制品、陶瓷商品）、易腐（如生鲜类电商商品）等特殊货物，需提前说明并采取相应的防护措施（如防震包装、冷链运输等），否则出现问题我司不承担责任。</p>
+        
+        <h3>6. 卡板使用与管理</h3>
+        <p>来货卡板我方将每车来货卡板统计数量后续根据空余卡板逐一退还，同时望各位供应商做好卡板统计，避免产生纠纷。</p>
+        
+        <h3>7. 车辆与仓库秩序</h3>
+        <ul>
+            <li>送货车辆需按照仓库管理员指定区域停靠，禁止占用消防通道及主干道，保障仓库物流作业的顺畅与安全。</li>
+            <li>送货人员需遵守仓库内的安全管理规定，严禁在仓库内吸烟、违规操作等行为，维护电商仓库的安全作业环境。</li>
+            <li>来货车辆需保持整洁，无影响货物质量的污染物，如油污、异味等，防止污染商品。</li>
+        </ul>
+
+        <div class="highlight">
+            <h2>四、收货联系方式</h2>
+            <table>
+                <tr>
+                    <th width="30%">联系人</th>
+                    <th width="40%">职责</th>
+                    <th width="30%">联系电话</th>
+                </tr>
+                <tr>
+                    <td>邓晶朴</td>
+                    <td>日常收货对接</td>
+                    <td>15322033181</td>
+                </tr>
+                <tr>
+                    <td>曾伟</td>
+                    <td>大促等紧急情况联络</td>
+                    <td>19120651064</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>请贵司严格遵守上述入库要求，以便货物顺利入库，共同保障电商业务的高效运转。如有疑问，可随时联系相关人员。</p>
+
+        <div class="signature">
+            <p>橙熟云仓</p>
+            <p>2025年09月08日</p>
+        </div>
+    </div>
+</body>
+</html>

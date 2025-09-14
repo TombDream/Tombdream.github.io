@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仓库打包出库作业规范</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p, li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+            margin: 15px 0;
+        }
+        .footer {
+            text-align: right;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+        .step {
+            counter-increment: step-counter;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 35px;
+        }
+        .step:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-size: 14px;
+        }
+        ol {
+            counter-reset: step-counter;
+            list-style-type: none;
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>仓库打包出库作业规范</h1>
+
+        <h2>一、复核与贴单</h2>
+        <ol>
+            <li class="step"><strong>核对信息</strong>：对拣货组配好的货物，必须逐一复核其品类、规格、数量是否与发货单信息完全相符。</li>
+            <li class="step"><strong>选择包装</strong>：根据货物的体积、重量和特性，选择合适的纸箱进行包装。</li>
+            <li class="step"><strong>规范贴单</strong>：将正确的面单平整、牢固地粘贴在纸箱的指定位置（如最大面），确保条码清晰、无褶皱。</li>
+        </ol>
+
+        <h2>二、打包与过机</h2>
+        <ol>
+            <li class="step"><strong>二次确认</strong>：贴单后，由熟悉流程的人员手持货品和纸箱，再次当面核对面单信息与箱内实物是否一致。</li>
+            <li class="step"><strong>协同作业</strong>：确认无误后，告知打包同事进行封箱打包操作。</li>
+            <li class="step"><strong>过机检查</strong>：封箱后的包裹必须通过称重机（过机）。
+                <div class="highlight">
+                    <strong>过机人员职责</strong>：必须紧盯称重显示，逐箱检查重量是否异常，以此判断是否存在漏放、多放或错放的情况。发现异常立即开箱检查。
+                </div>
+            </li>
+        </ol>
+
+        <h2>三、码板与出货</h2>
+        <ol>
+            <li class="step"><strong>检查封口</strong>：码板人员需逐一检查纸箱胶带封口是否牢固、平整。
+                <ul>
+                    <li>如发现胶带打折、封口不严或开裂，必须进行二次加固封装。</li>
+                    <li>如发现包裹未使用胶带封箱，立即告知过机人员退回处理。</li>
+                </ul>
+            </li>
+            <li class="step"><strong>缠膜固定</strong>：将检查合格的包裹整齐码放在托盘上，并进行缠绕膜加固，确保货物在运输过程中稳定不倒。</li>
+            <li class="step"><strong>规范放置</strong>：缠膜后的托盘必须放置于规定的出货口，等待装车。</li>
+        </ol>
+
+        <h2>四、气泡袋产品处理</h2>
+        <ol>
+            <li class="step">所有使用气泡袋/快递袋包装的产品，必须统一放至流水线上传输。</li>
+            <li class="step">
+                <strong>码板人员职责</strong>：需逐一手感揉捏检查，判断是否有<strong>空包、未封口、漏发少件</strong>等异常情况。
+            </li>
+        </ol>
+
+        <h2>五、差异处理与反馈</h2>
+        <ol>
+            <li class="step">任何一款产品在打包过程中或结束后，如发现<strong>多货、少货</strong>等数量差异，必须立即停止作业，并向组长或相关负责人反馈，查明原因。</li>
+            <li class="step">每日下班前，必须对工作区域进行彻底清查，包括：
+                <ul>
+                    <li>流水线下方</li>
+                    <li>工作桌面</li>
+                    <li>未打包的货物</li>
+                    <li>遗漏在角落的货品</li>
+                </ul>
+            </li>
+            <li class="step">对于清查发现的问题，需及时记录并反馈。</li>
+        </ol>
+
+        <h2>六、物流交接</h2>
+        <div class="highlight">
+            <p>每日下班前，打包组负责人必须<strong>及时、主动</strong>地告知车队负责人或司机当日准确的收货数量及货况，以便安排车辆和装运计划，确保货物准时发出。</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>版本号：</strong> V1.0</p>
+            <p><strong>生效日期：</strong> YYYY年MM月DD日</p>
+        </div>
+    </div>
+</body>
+</html>
