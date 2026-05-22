@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const categories = [...new Set(posts.map(p => p.data.category))];
+const allTags = [...new Set(posts.flatMap(p => p.data.tags))];
+---
+
+<BaseLayout title="所有文章 — 博客" description="浏览所有文章">
+  <div class="max-w-5xl mx-auto px-6 py-16">
+
+    <header class="mb-12">
+      <h1 class="font-serif text-3xl font-bold text-ink-900 dark:text-ink-50 tracking-tight mb-3">所有文章</h1>
+      <p class="text-ink-500 dark:text-ink-400">共 {posts.length} 篇，持续更新中</p>
+    </header>
+
+    <!-- Category filter -->
+    <div class="flex flex-wrap gap-2 mb-10" id="category-filters">
+      <button
+        data-filter="all"
+        class="filter-btn active text-sm px-4 py-1.5 rounded-full border border-ink-900 dark:border-ink-50 text-ink-900 dark:text-ink-50 font-medium transition-all"
+      >
+        全部
+      </button>
+      {categories.map(cat => (
+        <button
+          data-filter={cat}
+          class="filter-btn text-sm px-4 py-1.5 rounded-full border border-ink-200 dark:border-ink-700 text-ink-500 dark:text-ink-400 hover:border-ink-400 dark:hover:border-ink-500 transition-all"
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <!-- Posts list -->
+    <div id="posts-container" class="space-y-0">
+      {posts.map((post, i) => (
+        <a
+          href={`/blog/${post.slug}`}
+          data-category={post.data.category}
+          class="post-item group flex items-start gap-6 py-6 border-b border-ink-100 dark:border-ink-800/50 last:border-0 hover:bg-ink-50/50 dark:hover:bg-ink-900/30 -mx-3 px-3 rounded-lg transition-colors"
+        >
+          <div class="flex-shrink-0 w-16 text-right pt-0.5">
+            <span class="text-xs text-ink-400 dark:text-ink-600 font-mono">{String(i + 1).padStart(2, '0')}</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs text-ink-400 dark:text-ink-500 font-medium">{post.data.category}</span>
+              {post.data.tags.slice(0, 2).map(tag => (
+                <span class="text-xs px-2 py-0.5 rounded-full bg-ink-100 dark:bg-ink-800 text-ink-500 dark:text-ink-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h2 class="font-serif font-bold text-ink-900 dark:text-ink-50 leading-snug mb-1.5 group-hover:text-ink-600 dark:group-hover:text-ink-300 transition-colors">
+              {post.data.title}
+            </h2>
+            <p class="text-sm text-ink-500 dark:text-ink-400 line-clamp-1 leading-relaxed">
+              {post.data.description}
+            </p>
+          </div>
+          <div class="flex-shrink-0 pt-0.5 hidden sm:block">
+            <FormattedDate date={post.data.pubDate} />
+          </div>
+          <div class="flex-shrink-0 pt-1 text-ink-300 dark:text-ink-700 group-hover:text-ink-500 dark:group-hover:text-ink-400 transition-colors">
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Empty state -->
+    <div id="empty-state" class="hidden text-center py-20">
+      <p class="text-ink-400 dark:text-ink-500">该分类暂无文章</p>
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .filter-btn.active {
+    @apply border-ink-900 dark:border-ink-50 text-ink-900 dark:text-ink-50 bg-ink-900 dark:bg-ink-50 text-ink-50 dark:text-ink-900;
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const posts = document.querySelectorAll('.post-item');
+  const emptyState = document.getElementById('empty-state');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Filter posts with animation
+      let visibleCount = 0;
+      posts.forEach((post: Element) => {
+        const category = post.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          (post as HTMLElement).style.display = '';
+          visibleCount++;
+        } else {
+          (post as HTMLElement).style.display = 'none';
+        }
+      });
+
+      emptyState?.classList.toggle('hidden', visibleCount > 0);
+    });
+  });
+</script>

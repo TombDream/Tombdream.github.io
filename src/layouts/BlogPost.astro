@@ -1,0 +1,104 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  category,
+  tags = [],
+  readingTime,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={heroImage} article={true}>
+  <article class="max-w-2xl mx-auto px-6 py-16">
+    <!-- Back link -->
+    <a
+      href="/blog"
+      class="inline-flex items-center gap-2 text-sm text-ink-500 dark:text-ink-400 hover:text-ink-800 dark:hover:text-ink-100 transition-colors mb-10 group"
+    >
+      <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+      </svg>
+      所有文章
+    </a>
+
+    <!-- Header -->
+    <header class="mb-10">
+      <div class="flex items-center gap-3 mb-5">
+        <a
+          href={`/category/${category}`}
+          class="text-xs font-medium tracking-wider uppercase text-ink-500 dark:text-ink-400 hover:text-ink-800 dark:hover:text-ink-100 transition-colors"
+        >
+          {category}
+        </a>
+        <span class="text-ink-300 dark:text-ink-600">·</span>
+        <span class="text-xs text-ink-400 dark:text-ink-500">{readingTime} 分钟阅读</span>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-4xl font-bold text-ink-900 dark:text-ink-50 leading-tight tracking-tight mb-5">
+        {title}
+      </h1>
+
+      {description && (
+        <p class="text-lg text-ink-500 dark:text-ink-400 leading-relaxed mb-6">
+          {description}
+        </p>
+      )}
+
+      <div class="flex items-center gap-4 text-sm text-ink-400 dark:text-ink-500">
+        <FormattedDate date={pubDate} />
+        {updatedDate && updatedDate > pubDate && (
+          <>
+            <span>·</span>
+            <span>更新于 <FormattedDate date={updatedDate} /></span>
+          </>
+        )}
+      </div>
+    </header>
+
+    <!-- Hero image -->
+    {heroImage && (
+      <div class="mb-12 -mx-6 sm:-mx-8 overflow-hidden rounded-2xl">
+        <img
+          src={heroImage}
+          alt={title}
+          class="w-full aspect-[16/9] object-cover"
+          loading="eager"
+        />
+      </div>
+    )}
+
+    <!-- Divider -->
+    <div class="flex items-center gap-3 mb-10">
+      <div class="h-px flex-1 bg-ink-200 dark:bg-ink-800"></div>
+      <div class="text-ink-300 dark:text-ink-700 text-xs">✦</div>
+      <div class="h-px flex-1 bg-ink-200 dark:bg-ink-800"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="prose prose-ink dark:prose-invert max-w-none">
+      <slot />
+    </div>
+
+    <!-- Tags -->
+    {tags.length > 0 && (
+      <div class="mt-12 pt-8 border-t border-ink-200 dark:border-ink-800">
+        <div class="flex flex-wrap gap-2">
+          {tags.map((tag: string) => (
+            <a
+              href={`/tag/${tag}`}
+              class="text-sm px-3 py-1 rounded-full bg-ink-100 dark:bg-ink-800 text-ink-600 dark:text-ink-300 hover:bg-ink-200 dark:hover:bg-ink-700 transition-colors"
+            >
+              #{tag}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </article>
+</BaseLayout>
