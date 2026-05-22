@@ -1,0 +1,38 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TombDream 的博客</title>
+    <link>https://tombdream.github.io</link>
+    <description>TombDream 的个人博客，记录技术与生活。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 22 May 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://tombdream.github.io/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>用 Astro 构建极简个人博客</title>
+      <link>https://tombdream.github.io/blog/hello-astro.html</link>
+      <guid>https://tombdream.github.io/blog/hello-astro.html</guid>
+      <pubDate>Thu, 22 May 2026 00:00:00 GMT</pubDate>
+      <description>Astro 是一款专注于内容的静态站点生成器，性能极佳，开发体验丝滑。本文记录我从零搭建本博客的全过程。</description>
+      <category>技术</category>
+    </item>
+
+    <item>
+      <title>数字排毒与一次说走就走的旅行</title>
+      <link>https://tombdream.github.io/blog/digital-detox-travel.html</link>
+      <guid>https://tombdream.github.io/blog/digital-detox-travel.html</guid>
+      <pubDate>Thu, 15 May 2026 00:00:00 GMT</pubDate>
+      <description>关掉手机，走进山林，才发现原来世界这么安静。这次旅行让我重新思考技术与生活的关系。</description>
+      <category>生活</category>
+    </item>
+
+    <item>
+      <title>Android 开发中的那些坑</title>
+      <link>https://tombdream.github.io/blog/android-pitfalls.html</link>
+      <guid>https://tombdream.github.io/blog/android-pitfalls.html</guid>
+      <pubDate>Thu, 08 May 2026 00:00:00 GMT</pubDate>
+      <description>这些年踩过的 Android 开发坑，从 WebView 适配到内存泄漏，从混淆配置到 APK 反编译，一一记录。</description>
+      <category>技术</category>
+    </item>
+
+  </channel>
+</rss>

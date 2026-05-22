@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客文章 - TOMBDREAM</title>
+  <meta name="description" content="TombDream 的博客文章列表">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="header-logo">TombDream</a>
+      <nav class="header-nav">
+        <a href="/blog/" class="active">博客</a>
+        <a href="/about/">关于</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="blog-list-header">
+    <div class="container">
+      <h1 class="blog-list-title">博客文章</h1>
+      <p class="blog-list-desc">记录技术心得与生活随感</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="category-filter" id="categoryFilter">
+        <button class="category-btn active" data-category="all">全部</button>
+        <button class="category-btn" data-category="技术">技术</button>
+        <button class="category-btn" data-category="生活">生活</button>
+        <button class="category-btn" data-category="随笔">随笔</button>
+      </div>
+      <div class="blog-grid" id="blogGrid">
+
+        <a href="/blog/hello-astro.html" class="blog-card" data-category="技术">
+          <div class="blog-card-tag">技术</div>
+          <h3 class="blog-card-title">用 Astro 构建极简个人博客</h3>
+          <p class="blog-card-desc">Astro 是一款专注于内容的静态站点生成器，性能极佳，开发体验丝滑。本文记录我从零搭建本博客的全过程。</p>
+          <div class="blog-card-meta">
+            <span>2026-05-22</span>
+            <span class="dot">·</span>
+            <span class="reading-time">5 分钟阅读</span>
+          </div>
+        </a>
+
+        <a href="/blog/digital-detox-travel.html" class="blog-card" data-category="生活">
+          <div class="blog-card-tag">生活</div>
+          <h3 class="blog-card-title">数字排毒与一次说走就走的旅行</h3>
+          <p class="blog-card-desc">关掉手机，走进山林，才发现原来世界这么安静。这次旅行让我重新思考技术与生活的关系。</p>
+          <div class="blog-card-meta">
+            <span>2026-05-15</span>
+            <span class="dot">·</span>
+            <span class="reading-time">8 分钟阅读</span>
+          </div>
+        </a>
+
+        <a href="/blog/android-pitfalls.html" class="blog-card" data-category="技术">
+          <div class="blog-card-tag">技术</div>
+          <h3 class="blog-card-title">Android 开发中的那些坑</h3>
+          <p class="blog-card-desc">这些年踩过的 Android 开发坑，从 WebView 适配到内存泄漏，从混淆配置到 APK 反编译，一一记录。</p>
+          <div class="blog-card-meta">
+            <span>2026-05-08</span>
+            <span class="dot">·</span>
+            <span class="reading-time">10 分钟阅读</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-name">TombDream</div>
+      <div class="footer-copy">© 2026 TOMBDREAM. 用 ❤️ 和 GitHub Pages 构建。</div>
+      <div class="footer-links">
+        <a href="https://github.com/TombDream" target="_blank">GitHub</a>
+        <a href="/feed.xml">RSS</a>
+        <a href="/admin/">管理</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

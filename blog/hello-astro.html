@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用 Astro 构建极简个人博客 - TOMBDREAM</title>
+  <meta name="description" content="Astro 是一款专注于内容的静态站点生成器，性能极佳，开发体验丝滑。">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="header-logo">TombDream</a>
+      <nav class="header-nav">
+        <a href="/blog/">博客</a>
+        <a href="/about/">关于</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <article>
+    <div class="post-header">
+      <div class="container">
+        <div class="post-category">技术</div>
+        <h1 class="post-title">用 Astro 构建极简个人博客</h1>
+        <div class="post-meta">
+          <span>2026 年 5 月 22 日</span>
+          <span class="dot">·</span>
+          <span>5 分钟阅读</span>
+        </div>
+      </div>
+    </div>
+
+    <img src="/images/hero-astro.svg" alt="Astro blog" class="post-cover container">
+
+    <div class="post-content">
+      <p>Astro 是一款专注于内容的静态站点生成器。它的核心理念是<strong>零 JS 默认输出</strong>——只有当你真正需要交互时，才会发送 JavaScript。对于博客这种以内容为主的场景，这是最佳选择。</p>
+
+      <h2>为什么选择 Astro？</h2>
+
+      <p>在评估了多个静态站点生成器之后，我最终选择了 Astro，原因如下：</p>
+
+      <ul>
+        <li><strong>性能极佳</strong>：默认零 JavaScript，首屏加载速度极快</li>
+        <li><strong>内容优先</strong>：对 Markdown / MDX 支持非常友好</li>
+        <li><strong>框架无关</strong>：可以用 React、Vue、Svelte 组件，但只在需要时加载</li>
+        <li><strong>开发体验好</strong>：HMR 速度快，配置简单</li>
+      </ul>
+
+      <h2>搭建过程</h2>
+
+      <p>整个博客的搭建过程非常顺畅。Astro 的官方文档写得相当好，按照指南一步步操作即可。</p>
+
+      <pre><code># 创建新项目
+npm create astro@latest my-blog
+cd my-blog
+npm install
+npm run dev</code></pre>
+
+      <p>开发服务器启动后，打开 <code>http://localhost:4321</code> 就能看到默认页面。接下来就是根据自己的喜好定制主题。</p>
+
+      <h2>极简文艺风设计</h2>
+
+      <p>这个博客的设计灵感来自 Medium 和 Readwise Reader。核心设计原则是：</p>
+
+      <ol>
+        <li>大量留白，让内容呼吸</li>
+        <li>使用衬线字体（Lora）作为标题字体</li>
+        <li>极简的配色方案，以黑白灰为主</li>
+        <li>精心设计的排版，确保长文阅读体验</li>
+      </ol>
+
+      <blockquote>好的设计是看不见的设计。读者应该专注于内容，而不是页面本身。</blockquote>
+
+      <h2>在线写文章</h2>
+
+      <p>通过集成 Decap CMS（原 Netlify CMS），可以在线编写和发布文章，无需每次都通过 Git 提交。只需访问 <code>/admin</code> 页面，登录 GitHub 账号即可。</p>
+
+      <h2>总结</h2>
+
+      <p>用 Astro 搭建博客的体验非常愉快。如果你也在寻找一个轻量、快速、专注于内容的博客方案，强烈推荐试试 Astro。</p>
+
+      <p>本博客已开源，欢迎访问 <a href="https://github.com/TombDream/TombDream.github.io" target="_blank">GitHub 仓库</a>查看完整代码。</p>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-name">TombDream</div>
+      <div class="footer-copy">© 2026 TOMBDREAM. 用 ❤️ 和 GitHub Pages 构建。</div>
+      <div class="footer-links">
+        <a href="https://github.com/TombDream" target="_blank">GitHub</a>
+        <a href="/feed.xml">RSS</a>
+        <a href="/admin/">管理</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop" aria-label="回到顶部">↑</a>
+  <script src="/js/main.js"></script>
+</body>
+</html>
